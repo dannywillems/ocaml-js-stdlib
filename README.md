@@ -24,7 +24,7 @@ contribute.
 
 ## Maintainers
 
-Danny Willems
-* Twitter: @dwillems42
-* Github: https://github.com/dannywillems
-* Email: contact@danny-willems.be
+* Danny Willems
+  * Twitter: [@dwillems42](https://twitter.com/dwillems42)
+  * Github: https://github.com/dannywillems
+  * Email: contact@danny-willems.be

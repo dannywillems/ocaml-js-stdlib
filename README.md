@@ -1,7 +1,7 @@
 Binding to Javascript standard library in OCaml
 ===============================================
 
-Some technologies such as [js_of_ocaml](https://ocsigen.com/js_of_ocaml)
+Some technologies such as [js_of_ocaml](https://ocsigen.org/js_of_ocaml)
 provides a compiler from OCaml to javascript allowing ocaml developer to use
 OCaml to develop such as applications running in a browser or mobile
 applications using cordova.

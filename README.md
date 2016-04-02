@@ -1,4 +1,4 @@
-Binding to Javascript standard library in OCaml
+Binding in OCaml to Javascript standard library
 ===============================================
 
 Some technologies such as [js_of_ocaml](https://ocsigen.org/js_of_ocaml)
@@ -11,16 +11,35 @@ module from js_of_ocaml for example).
 
 ## How is this library implemented
 
-We try to use [gen_js_api](https://github.com/lexifi/gen_js_api) which aims to
+[Gen_js_api](https://github.com/lexifi/gen_js_api) is recommended which aims to
 provide binding to javascript independently of the ocaml to javascript compiler.
 With gen_js_api, you only need to provide the interface (mli file) and
 gen_js_api executable outputs the implementation.
 
-## How to contribute
+## How to use it
 
-This library is on a very early stage of development. It is developed when we
-need javascript functions provided in the standard library. Do not hesitate to
-contribute.
+Gen_js_api and some files needs the **compiler >= 4.03.0**. See the [gen_js_api
+repository](https://github.com/lexifi/gen_js_api) for informations about
+compilation.
+
+## Documentation
+
+* core.mli: partial binding to the core javascript standard library.
+* dom.mli: binding to the *DOM*.
+* jQuery.mli: bindings to jQuery.
+* js_date.mli: bindings to the *Date* object.
+
+## To-do
+
+* Documentation
+
+* The entire library structure must be defined.
+
+* We need to unify the styles used for the bindings: classes or private types ?
+
+## License
+
+This library is under LGPL license.
 
 ## Maintainers
 
@@ -29,3 +48,9 @@ contribute.
   * Github: https://github.com/dannywillems
   * Email: contact@danny-willems.be
   * Website: [danny-willems.be](https://danny-willems.be)
+
+## Contributors
+
+* Lexifi SAS: Thanks for the initial dom.mli, jQuery.mli and core.mli files and
+  the license choice.
+  * Website: [Lexifi](https://www.lexifi.com/)

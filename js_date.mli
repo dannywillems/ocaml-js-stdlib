@@ -89,3 +89,5 @@ val date_full                       : int -> int -> int -> int -> int -> int ->
                                       int -> date
 [@@js.new "Date"]
 
+val date_to_js : date -> Ojs.t
+val date_of_js : Ojs.t -> date

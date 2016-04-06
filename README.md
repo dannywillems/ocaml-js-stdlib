@@ -1,6 +1,8 @@
 Binding in OCaml to Javascript standard library
 ===============================================
 
+* Continuous integration: [![Build Status](https://travis-ci.org/dannywillems/ocaml-js-stdlib.svg?branch=master)](https://travis-ci.org/dannywillems/ocaml-js-stdlib)
+
 Some technologies such as [js_of_ocaml](https://ocsigen.org/js_of_ocaml)
 provides a compiler from OCaml to javascript allowing ocaml developer to use
 OCaml to develop such as applications running in a browser or mobile
@@ -15,6 +17,14 @@ module from js_of_ocaml for example).
 provide binding to javascript independently of the ocaml to javascript compiler.
 With gen_js_api, you only need to provide the interface (mli file) and
 gen_js_api executable outputs the implementation.
+
+## How to compile
+
+A Makefile is provided:
+* *make*: generate the ml files from the interface, and compile mli in cmi and
+  ml in cmo.
+* *make clean*: remove ml, cmi and cmo files.
+* *make re*: clean and execute make.
 
 ## How to use it
 

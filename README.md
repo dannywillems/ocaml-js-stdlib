@@ -18,13 +18,30 @@ provide binding to javascript independently of the ocaml to javascript compiler.
 With gen_js_api, you only need to provide the interface (mli file) and
 gen_js_api executable outputs the implementation.
 
-## How to compile
+## How to install and compile your project ?
 
-A Makefile is provided:
+Don't forget to switch to a compiler **>= 4.03.0**.
+```Shell
+opam switch 4.03.0+beta1
+```
+
+You can use opam by pinning the repository with
+```Shell
+opam pin add ocaml-js-stdlib https://github.com/dannywillems/ocaml-js-stdlib.git
+```
+
+and to compile your project, use
+```Shell
+ocamlfind ocamlc -c -o [output_file] -package gen_js_api -package ocaml-js-stdlib [...] -linkpkg [other arguments]
+```
+
+You can also manually compile. A Makefile is provided:
 * *make*: generate the ml files from the interface, and compile mli in cmi and
   ml in cmo.
 * *make clean*: remove ml, cmi and cmo files.
 * *make re*: clean and execute make.
+* *make install*: install the library under ocaml-js-stdlib.
+* *make remove*: remove the library.
 
 ## How to use it
 

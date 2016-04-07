@@ -1,0 +1,25 @@
+opam-version: "1.2"
+name:         "ocaml-js-stdlib"
+maintainer:   "Danny Willems <contact@danny-willems.be>"
+author:       [
+  "Danny Willems <contact@danny-willems.be>"
+  "LexiFi SAS"
+  ]
+
+homepage:     "https://github.com/dannywillems/ocaml-js-stdlib"
+bug-reports:  "https://github.com/dannywillems/ocaml-js-stdlib"
+
+dev-repo:     "https://github.com/dannywillems/ocaml-js-stdlib"
+
+license:      "LGPL-3.0 with OCaml linking exception"
+
+version:      "dev"
+
+build: [make "build"]
+install: [make "install"]
+remove: [make "remove"]
+
+depends: [
+  "gen_js_api"
+]
+available: [ ocaml-version >= "4.03.0" ]

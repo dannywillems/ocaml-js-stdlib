@@ -7,7 +7,7 @@ author:       [
   ]
 
 homepage:     "https://github.com/dannywillems/ocaml-js-stdlib"
-bug-reports:  "https://github.com/dannywillems/ocaml-js-stdlib"
+bug-reports:  "https://github.com/dannywillems/ocaml-js-stdlib/issues"
 
 dev-repo:     "https://github.com/dannywillems/ocaml-js-stdlib"
 

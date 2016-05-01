@@ -15,3 +15,7 @@ script: bash -ex .travis-ci.sh
 
 env:
   - OPAM_SWITCH=4.03.0+beta1
+
+cache:
+  directories:
+  - $HOME/.opam

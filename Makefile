@@ -1,6 +1,6 @@
 ################################################################################
-MLI_FILE		= 	core.mli \
-					dom.mli \
+MLI_FILE		= 	js_core.mli \
+					js_dom.mli \
 					jQuery.mli \
 					js_date.mli
 

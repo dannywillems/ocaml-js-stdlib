@@ -24,9 +24,9 @@ val explode: t -> t list
 let explode x = Ojs.list_of_js wrap x
     ]
 
-val elements: t -> Dom.element list
+val elements: t -> Js_dom.element list
     [@@js.custom
-let elements node = Ojs.list_of_js (fun x -> new Dom.element x) node
+let elements node = Ojs.list_of_js (fun x -> new Js_dom.element x) node
     ]
 
 val contents: t -> t [@@js.call]

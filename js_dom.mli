@@ -318,6 +318,7 @@ class node: Ojs.t ->
     method first_child: node option
     method last_child: node option
     method next_sibling: node option
+    method inner_text : string
     method node_name: string
     method node_type: [ `Element [@js 1]
                       | `Attribute [@js 2]
@@ -379,6 +380,8 @@ and element: Ojs.t ->
 
     method set_text_content: string -> unit
     method getBBox: bounding_box [@@js.call]
+
+    method inner_HTML : string
   end
 and window: Ojs.t ->
   object

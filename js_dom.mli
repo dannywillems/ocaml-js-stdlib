@@ -319,6 +319,7 @@ class node: Ojs.t ->
     method last_child: node option
     method next_sibling: node option
     method inner_text : string
+    method text_content: string
     method node_name: string
     method node_type: [ `Element [@js 1]
                       | `Attribute [@js 2]

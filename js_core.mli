@@ -27,19 +27,5 @@ val encode_URI: string -> string
 val decode_URI: string -> string
     [@@js.global]
 
-(* DEPRECATED: See js_date.mli
-module Date: sig
-  type t
-
-  val now: unit -> t [@@js.new "Date"]
-
-  val get_date: t -> int [@@js.call]
-  val get_full_year: t -> int [@@js.call]
-  val get_month: t -> int [@@js.call]
-end
-*)
-
-(*
 val log_string: string -> unit [@@js.global "console.log"]
 val log_any: Ojs.t -> unit [@@js.global "console.log"]
-*)

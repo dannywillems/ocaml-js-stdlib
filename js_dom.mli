@@ -351,7 +351,7 @@ class node: Ojs.t ->
     method get_elements_by_tag_name: string -> element list [@@js.call]
     method get_elements_by_class_name: string -> element list [@@js.call]
     method query_selector_all: string -> element list [@@js.call]
-    method query_selector: string -> element [@@js.call]
+    method query_selector: string -> element option [@@js.call]
   end
 and document: Ojs.t ->
   object

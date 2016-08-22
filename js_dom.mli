@@ -353,6 +353,7 @@ class node: Ojs.t ->
     method query_selector_all: string -> element list [@@js.call]
     method query_selector: string -> element option [@@js.call]
   end
+
 and document: Ojs.t ->
   object
     inherit node
@@ -367,10 +368,12 @@ and document: Ojs.t ->
     method set_title: string -> unit
     method body: element
   end
+
 and attribute: Ojs.t ->
   object
     inherit node
   end
+
 and element: Ojs.t ->
   object
     inherit node
@@ -384,6 +387,7 @@ and element: Ojs.t ->
 
     method inner_HTML : string
   end
+
 and window: Ojs.t ->
   object
     inherit Event.listener
@@ -443,6 +447,7 @@ and window: Ojs.t ->
     method post_message: Ojs.t -> string -> unit
     method request_animation_frame: ((unit -> unit) -> unit) option
   end
+
 and storage: Ojs.t ->
   object
     inherit Ojs.obj
@@ -453,6 +458,7 @@ and storage: Ojs.t ->
     method remove_item: string -> unit
     method clear: unit
   end
+
 and history: Ojs.t ->
   object
     inherit Ojs.obj
@@ -463,12 +469,14 @@ and history: Ojs.t ->
     method replace_state: Ojs.t -> string -> string -> unit
     method push_state: Ojs.t -> string -> string -> unit
   end
+
 and html_element: Ojs.t ->
   object
     inherit element
     method hidden: bool
     method set_hidden: bool -> unit
   end
+
 and html_iframe_element: Ojs.t ->
   object
     inherit html_element
@@ -485,12 +493,94 @@ and html_iframe_element: Ojs.t ->
     method scrolling: [`Auto [@js "auto"] | `Yes [@js "yes"] | `No [@js "no"]] [@js.enum]
     method set_scrolling: ([`Auto [@js "auto"] | `Yes [@js "yes"] | `No [@js "no"]] [@js.enum]) -> unit
   end
+
 and html_input_element: Ojs.t ->
   object
     inherit html_element
     method files: File.t list
     method get_type: string
     method set_type: string -> unit
+  end
+
+and link_element : Ojs.t ->
+  object
+    inherit element
+    method disabled : bool
+    method charset : string
+    method crossorigin : string
+    method href : string
+    method hreflang : string
+    method media : string
+    method rel : string
+    method rev : string
+    method target : string
+    method _type : string [@@js.get "type"]
+  end
+
+and title_element : Ojs.t ->
+  object
+    inherit element
+    method text : string
+  end
+
+and meta_element : Ojs.t ->
+  object
+    inherit element
+    method content : string
+    method http_equiv : string
+    method name : string
+    method scheme : string
+  end
+
+and base_element : Ojs.t ->
+  object
+    inherit element
+    method href : string
+    method target : string
+  end
+
+and style_element : Ojs.t ->
+  object
+    inherit element
+    method disabled : bool
+    method media : string
+    method _type : string [@@js.get "type"]
+  end
+
+and body_element : Ojs.t ->
+  object
+    inherit element
+  end
+
+and form_element : Ojs.t ->
+  object
+    inherit element
+    method length : int
+    method acceptCharset : string
+    method action : string
+    method enctype : string
+    method _method : string [@@js.get "method"]
+    method target : string
+    method submit : unit
+    method reset : unit
+  end
+
+and opt_group_element : Ojs.t ->
+  object
+    inherit element
+    method disabled : bool
+    method label : string
+  end
+
+and option_element : Ojs.t ->
+  object
+    inherit element
+    method form : form_element option
+    method default_selected : bool
+    method text : string
+    method index : int
+    method select : bool
+    method value : string
   end
 
 module Svg : sig

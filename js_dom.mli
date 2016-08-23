@@ -245,24 +245,24 @@ module Event: sig
 
   let wrap_callback (type a) (ev:a t) (f:a -> unit) : a callback =
     match ev with
-    | Click -> wrap_callback_gen mouse_event_of_js f
-    | DblClick -> wrap_callback_gen mouse_event_of_js f
-    | MouseDown -> wrap_callback_gen mouse_event_of_js f
+    | Click      -> wrap_callback_gen mouse_event_of_js f
+    | DblClick   -> wrap_callback_gen mouse_event_of_js f
+    | MouseDown  -> wrap_callback_gen mouse_event_of_js f
     | MouseEnter -> wrap_callback_gen mouse_event_of_js f
     | MouseLeave -> wrap_callback_gen mouse_event_of_js f
-    | MouseMove -> wrap_callback_gen mouse_event_of_js f
-    | MouseOut -> wrap_callback_gen mouse_event_of_js f
-    | MouseOver -> wrap_callback_gen mouse_event_of_js f
-    | MouseUp -> wrap_callback_gen mouse_event_of_js f
-    | KeyDown -> wrap_callback_gen keyboard_event_of_js f
-    | KeyPress -> wrap_callback_gen keyboard_event_of_js f
-    | KeyUp -> wrap_callback_gen keyboard_event_of_js f
+    | MouseMove  -> wrap_callback_gen mouse_event_of_js f
+    | MouseOut   -> wrap_callback_gen mouse_event_of_js f
+    | MouseOver  -> wrap_callback_gen mouse_event_of_js f
+    | MouseUp    -> wrap_callback_gen mouse_event_of_js f
+    | KeyDown    -> wrap_callback_gen keyboard_event_of_js f
+    | KeyPress   -> wrap_callback_gen keyboard_event_of_js f
+    | KeyUp      -> wrap_callback_gen keyboard_event_of_js f
     | HashChange -> wrap_callback_gen hash_change_event_of_js f
-    | Load -> wrap_callback_gen event_of_js f
-    | Message -> wrap_callback_gen message_event_of_js f
-    | Resize -> wrap_callback_gen event_of_js f
-    | LoadEnd -> wrap_callback_gen file_event_of_js f
-    | Change -> wrap_callback_gen event_of_js f
+    | Load       -> wrap_callback_gen event_of_js f
+    | Message    -> wrap_callback_gen message_event_of_js f
+    | Resize     -> wrap_callback_gen event_of_js f
+    | LoadEnd    -> wrap_callback_gen file_event_of_js f
+    | Change     -> wrap_callback_gen event_of_js f
 
   class listener (x:Ojs.t) =
     object(this)
@@ -314,14 +314,14 @@ class css_style_declaration: Ojs.t ->
 class node: Ojs.t ->
   object
     inherit Ojs.obj
-    method child_nodes: node list
-    method first_child: node option
-    method last_child: node option
-    method next_sibling: node option
-    method inner_text : string
-    method text_content: string
-    method node_name: string
-    method node_type: [ `Element [@js 1]
+    method child_nodes                : node list
+    method first_child                : node option
+    method last_child                 : node option
+    method next_sibling               : node option
+    method inner_text                 : string
+    method text_content               : string
+    method node_name                  : string
+    method node_type                  : [ `Element [@js 1]
                       | `Attribute [@js 2]
                       | `Text [@js 3]
                       | `CData [@js 4]
@@ -331,42 +331,42 @@ class node: Ojs.t ->
                       | `Document_type [@js 10]
                       | `Document_fragment [@js 11]
                       ] [@js.enum]
-    method node_value: string option
-    method parent_node: node option
-    method previous_sibling: node option
-    method attributes: attribute list
-    method set_attribute: string -> string -> unit
-    method get_attribute: string -> string option
-    method owner_document: document option
-    method clone_node: node -> ?deep:bool -> unit -> node
-    method has_attributes: bool [@@js.call]
-    method has_child_nodes: bool [@@js.call]
-    method insert_before: new_child:node -> ref_child:node option -> unit
-    method is_supported: string -> string -> bool
-    method normalize: unit
-    method append_child: node -> unit [@@js.call]
-    method remove_child: node -> unit [@@js.call]
-    method replace_child: new_child:node -> old_child:node -> unit
-    method get_element_by_id: string -> element option [@@js.call]
-    method get_elements_by_tag_name: string -> element list [@@js.call]
-    method get_elements_by_class_name: string -> element list [@@js.call]
-    method query_selector_all: string -> element list [@@js.call]
-    method query_selector: string -> element option [@@js.call]
+    method node_value                 : string option
+    method parent_node                : node option
+    method previous_sibling           : node option
+    method attributes                 : attribute list
+    method set_attribute              : string -> string -> unit
+    method get_attribute              : string -> string option
+    method owner_document             : document option
+    method clone_node                 : node -> ?deep:bool -> unit -> node
+    method has_attributes             : bool [@@js.call]
+    method has_child_nodes            : bool [@@js.call]
+    method insert_before              : new_child:node -> ref_child:node option -> unit
+    method is_supported               : string -> string -> bool
+    method normalize                  : unit
+    method append_child               : node -> unit [@@js.call]
+    method remove_child               : node -> unit [@@js.call]
+    method replace_child              : new_child:node -> old_child:node -> unit
+    method get_element_by_id          : string -> element option [@@js.call]
+    method get_elements_by_tag_name   : string -> element list [@@js.call]
+    method get_elements_by_class_name : string -> element list [@@js.call]
+    method query_selector_all         : string -> element list [@@js.call]
+    method query_selector             : string -> element option [@@js.call]
   end
 
 and document: Ojs.t ->
   object
     inherit node
-    method cookie: string
-    method set_cookie: string -> unit
-    method open_: ?mime_type:string -> ?history_mode:string -> unit -> unit [@@js.call "open"]
-    method write: string -> unit [@@js.call]
-    method writeln: string -> unit [@@js.call]
-    method close: unit
-    method create_element: string -> element [@@js.call]
-    method create_element_ns: string -> string -> element [@@js.call "createElementNS"]
-    method set_title: string -> unit
-    method body: element
+    method cookie            : string
+    method set_cookie        : string -> unit
+    method open_             : ?mime_type:string -> ?history_mode:string -> unit -> unit [@@js.call "open"]
+    method write             : string -> unit [@@js.call]
+    method writeln           : string -> unit [@@js.call]
+    method close             : unit
+    method create_element    : string -> element [@@js.call]
+    method create_element_ns : string -> string -> element [@@js.call "createElementNS"]
+    method set_title         : string -> unit
+    method body              : element
   end
 
 and attribute: Ojs.t ->
@@ -379,95 +379,95 @@ and element: Ojs.t ->
     inherit node
     inherit Event.listener
 
-    method get_bounding_client_rect: bounding_rect [@@js.call]
-    method style: css_style_declaration
+    method get_bounding_client_rect : bounding_rect [@@js.call]
+    method style                    : css_style_declaration
 
-    method set_text_content: string -> unit
-    method getBBox: bounding_box [@@js.call]
+    method set_text_content         : string -> unit
+    method getBBox                  : bounding_box [@@js.call]
 
-    method inner_HTML : string
+    method inner_HTML               : string
   end
 
 and window: Ojs.t ->
   object
     inherit Event.listener
-    method closed: bool
-    method default_status: string
-    method set_default_status: string -> unit
-    method document: document
-    method frame_element: html_iframe_element option
-    method frames: element list
-    method history: history
-    method inner_height: int
-    method inner_width: int
-    method length: int
-    method location: Location.t
-    method name: string
-    method set_name: string -> unit
-    method navigator: Navigator.t
-    method opener: window
-    method set_opener: window -> unit
-    method outer_height: int
-    method outer_width: int
-    method page_x_offset: int
-    method page_y_offset: int
-    method parent: window
-    method screen: Screen.t
-    method screen_left: int
-    method screen_top: int
-    method screen_x: int
-    method screen_y: int
-    method status: string
-    method set_status: string -> unit
-    method top: window
-    method alert: string -> unit [@@js.call]
-    method atob: string -> string
-    method btoa: string -> string
-    method blur: unit
-    method close: unit
-    method confirm: string -> bool [@@js.call]
-    method focus: unit
-    method move_by: int -> int -> unit
-    method move_to: int -> int -> unit
-    method open_: ?url:string -> ?name:string -> ?features:string -> ?replace:bool -> unit -> unit
-    method print: unit
-    method prompt: string -> string -> string option
-    method resize_by: int -> int -> unit
-    method resize_to: int -> int -> unit
-    method scroll_by: int -> int -> unit
-    method scroll_to: int -> int -> unit
-    method clear_interval: int -> unit [@@js.call]
-    method set_interval: (unit -> unit) -> int -> int
-    method clear_timeout: int -> unit [@@js.call]
-    method set_timeout: (unit -> unit) -> int -> int
-    method async: ((unit -> unit) -> unit) option
-    method stop: unit
-    method local_storage: storage option
-    method session_storage: storage option
-    method post_message: Ojs.t -> string -> unit
-    method request_animation_frame: ((unit -> unit) -> unit) option
+    method closed                  : bool
+    method default_status          : string
+    method set_default_status      : string -> unit
+    method document                : document
+    method frame_element           : html_iframe_element option
+    method frames                  : element list
+    method history                 : history
+    method inner_height            : int
+    method inner_width             : int
+    method length                  : int
+    method location                : Location.t
+    method name                    : string
+    method set_name                : string -> unit
+    method navigator               : Navigator.t
+    method opener                  : window
+    method set_opener              : window -> unit
+    method outer_height            : int
+    method outer_width             : int
+    method page_x_offset           : int
+    method page_y_offset           : int
+    method parent                  : window
+    method screen                  : Screen.t
+    method screen_left             : int
+    method screen_top              : int
+    method screen_x                : int
+    method screen_y                : int
+    method status                  : string
+    method set_status              : string -> unit
+    method top                     : window
+    method alert                   : string -> unit [@@js.call]
+    method atob                    : string -> string
+    method btoa                    : string -> string
+    method blur                    : unit
+    method close                   : unit
+    method confirm                 : string -> bool [@@js.call]
+    method focus                   : unit
+    method move_by                 : int -> int -> unit
+    method move_to                 : int -> int -> unit
+    method open_                   : ?url:string -> ?name:string -> ?features:string -> ?replace:bool -> unit -> unit
+    method print                   : unit
+    method prompt                  : string -> string -> string option
+    method resize_by               : int -> int -> unit
+    method resize_to               : int -> int -> unit
+    method scroll_by               : int -> int -> unit
+    method scroll_to               : int -> int -> unit
+    method clear_interval          : int -> unit [@@js.call]
+    method set_interval            : (unit -> unit) -> int -> int
+    method clear_timeout           : int -> unit [@@js.call]
+    method set_timeout             : (unit -> unit) -> int -> int
+    method async                   : ((unit -> unit) -> unit) option
+    method stop                    : unit
+    method local_storage           : storage option
+    method session_storage         : storage option
+    method post_message            : Ojs.t -> string -> unit
+    method request_animation_frame : ((unit -> unit) -> unit) option
   end
 
 and storage: Ojs.t ->
   object
     inherit Ojs.obj
-    method length: int
-    method key: int -> string option
-    method get_item: string -> string option
-    method set_item: string -> string -> unit
-    method remove_item: string -> unit
-    method clear: unit
+    method length      : int
+    method key         : int -> string option
+    method get_item    : string -> string option
+    method set_item    : string -> string -> unit
+    method remove_item : string -> unit
+    method clear       : unit
   end
 
 and history: Ojs.t ->
   object
     inherit Ojs.obj
-    method length: int
-    method back: unit
-    method forward: unit
-    method go: ([`Offset of int | `Url of string] [@js.union]) -> unit
-    method replace_state: Ojs.t -> string -> string -> unit
-    method push_state: Ojs.t -> string -> string -> unit
+    method length        : int
+    method back          : unit
+    method forward       : unit
+    method go            : ([`Offset of int | `Url of string] [@js.union]) -> unit
+    method replace_state : Ojs.t -> string -> string -> unit
+    method push_state    : Ojs.t -> string -> string -> unit
   end
 
 and html_element: Ojs.t ->
@@ -480,18 +480,18 @@ and html_element: Ojs.t ->
 and html_iframe_element: Ojs.t ->
   object
     inherit html_element
-    method content_document: document option
-    method content_window: window option
-    method src: string
-    method set_src: string -> unit
-    method height: string
-    method set_height: string -> unit
-    method width: string
-    method set_width: string -> unit
-    method name: string
-    method set_name: string -> unit
-    method scrolling: [`Auto [@js "auto"] | `Yes [@js "yes"] | `No [@js "no"]] [@js.enum]
-    method set_scrolling: ([`Auto [@js "auto"] | `Yes [@js "yes"] | `No [@js "no"]] [@js.enum]) -> unit
+    method content_document : document option
+    method content_window   : window option
+    method src              : string
+    method set_src          : string -> unit
+    method height           : string
+    method set_height       : string -> unit
+    method width            : string
+    method set_width        : string -> unit
+    method name             : string
+    method set_name         : string -> unit
+    method scrolling        : [`Auto [@js "auto"] | `Yes [@js "yes"] | `No [@js "no"]] [@js.enum]
+    method set_scrolling    : ([`Auto [@js "auto"] | `Yes [@js "yes"] | `No [@js "no"]] [@js.enum]) -> unit
   end
 
 and html_input_element: Ojs.t ->
@@ -505,19 +505,19 @@ and html_input_element: Ojs.t ->
 and link_element : Ojs.t ->
   object
     inherit element
-    method disabled : bool
-    method charset : string
+    method disabled    : bool
+    method charset     : string
     method crossorigin : string
-    method href : string
-    method hreflang : string
-    method media : string
-    method rel : string
-    method rev : string
-    method target : string
-    method _type : string [@@js.get "type"]
+    method href        : string
+    method hreflang    : string
+    method media       : string
+    method rel         : string
+    method rev         : string
+    method target      : string
+    method _type       : string [@@js.get "type"]
   end
 
-and title_element : Ojs.t ->
+and title_element      : Ojs.t ->
   object
     inherit element
     method text : string
@@ -526,16 +526,16 @@ and title_element : Ojs.t ->
 and meta_element : Ojs.t ->
   object
     inherit element
-    method content : string
+    method content    : string
     method http_equiv : string
-    method name : string
-    method scheme : string
+    method name       : string
+    method scheme     : string
   end
 
 and base_element : Ojs.t ->
   object
     inherit element
-    method href : string
+    method href   : string
     method target : string
   end
 
@@ -543,8 +543,8 @@ and style_element : Ojs.t ->
   object
     inherit element
     method disabled : bool
-    method media : string
-    method _type : string [@@js.get "type"]
+    method media    : string
+    method _type    : string [@@js.get "type"]
   end
 
 and body_element : Ojs.t ->
@@ -555,14 +555,14 @@ and body_element : Ojs.t ->
 and form_element : Ojs.t ->
   object
     inherit element
-    method length : int
+    method length        : int
     method acceptCharset : string
-    method action : string
-    method enctype : string
-    method _method : string [@@js.get "method"]
-    method target : string
-    method submit : unit
-    method reset : unit
+    method action        : string
+    method enctype       : string
+    method _method       : string [@@js.get "method"]
+    method target        : string
+    method submit        : unit
+    method reset         : unit
   end
 
 and opt_group_element : Ojs.t ->
@@ -575,12 +575,12 @@ and opt_group_element : Ojs.t ->
 and option_element : Ojs.t ->
   object
     inherit element
-    method form : form_element option
+    method form             : form_element option
     method default_selected : bool
-    method text : string
-    method index : int
-    method select : bool
-    method value : string
+    method text             : string
+    method index            : int
+    method select           : bool
+    method value            : string
   end
 
 module Svg : sig
@@ -593,10 +593,10 @@ module Svg : sig
     object
       inherit Ojs.obj
 
-      method unit_type: int
-      method value: float
-      method value_as_string: string
-      method value_in_specified_units: float
+      method unit_type                : int
+      method value                    : float
+      method value_as_string          : string
+      method value_in_specified_units : float
     end
 
   class svg_animated_length: Ojs.t ->

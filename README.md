@@ -3,13 +3,14 @@ Binding in OCaml to Javascript standard library
 
 [![Build Status](https://travis-ci.org/dannywillems/ocaml-js-stdlib.svg?branch=master)](https://travis-ci.org/dannywillems/ocaml-js-stdlib)
 
+This library aims to provide a binding to the JavaScript standard library and
+DOM using *pure* OCaml type (not using JS module from js_of_ocaml for
+example).
+
 Some technologies such as [js_of_ocaml](https://ocsigen.org/js_of_ocaml)
 provides a compiler from OCaml to JavaScript allowing OCaml developer to use
 OCaml to develop such as applications running in a browser or mobile
 applications using cordova.
-
-This library aims to provide a binding, using *pure* OCaml type (not using JS
-module from js_of_ocaml for example).
 
 ## How is this library implemented?
 

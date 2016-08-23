@@ -4,7 +4,7 @@ Binding in OCaml to Javascript standard library
 [![Build Status](https://travis-ci.org/dannywillems/ocaml-js-stdlib.svg?branch=master)](https://travis-ci.org/dannywillems/ocaml-js-stdlib)
 
 Some technologies such as [js_of_ocaml](https://ocsigen.org/js_of_ocaml)
-provides a compiler from OCaml to javascript allowing ocaml developer to use
+provides a compiler from OCaml to JavaScript allowing OCaml developer to use
 OCaml to develop such as applications running in a browser or mobile
 applications using cordova.
 
@@ -14,7 +14,7 @@ module from js_of_ocaml for example).
 ## How is this library implemented?
 
 [Gen_js_api](https://github.com/lexifi/gen_js_api) is recommended which aims to
-provide binding to javascript independently of the ocaml to javascript compiler.
+provide binding to JavaScript independently of the OCaml to JavaScript compiler.
 With gen_js_api, you only need to provide the interface (mli file) and
 gen_js_api executable outputs the implementation.
 
@@ -51,7 +51,7 @@ compilation.
 
 ## Documentation
 
-* js_core.mli: partial binding to the core javascript standard library.
+* js_core.mli: partial binding to the core JavaScript standard library.
 * js_dom.mli: binding to the *DOM*.
 * jQuery.mli: bindings to jQuery.
 * js_date.mli: bindings to the *Date* object.

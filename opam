@@ -9,7 +9,7 @@ author:       [
 homepage:     "https://github.com/dannywillems/ocaml-js-stdlib"
 bug-reports:  "https://github.com/dannywillems/ocaml-js-stdlib/issues"
 
-dev-repo:     "https://github.com/dannywillems/ocaml-js-stdlib"
+dev-repo:     "https://github.com/dannywillems/ocaml-js-stdlib.git"
 
 license:      "LGPL-3.0 with OCaml linking exception"
 
